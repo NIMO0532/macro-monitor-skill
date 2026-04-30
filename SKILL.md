@@ -3,7 +3,7 @@ name: macro-monitor
 description: 每日宏观数据监控和推送。自动浏览免费数据源（Trading Economics、FRED、国家统计局、央行官网、财联社等），整理整合过去24小时发布的宏观数据和政策信息，并推送给用户。通过 cron 每天晚上10点自动触发。
 description_zh: "每日自动采集宏观经济数据和政策信息并推送"
 description_en: "Daily macro economic data monitoring and push notifications"
-version: 1.2.0
+version: 1.3.0
 ---
 
 # 宏观数据监控技能
@@ -196,6 +196,13 @@ cp -r macro-monitor-skill/* ~/.workbuddy/skills/macro-monitor/
 - 提示词：`执行宏观数据监控，浏览免费数据源，整理过去24小时发布的宏观数据和政策信息并推送`
 
 ## 更新日志
+
+### v1.3.0 (2026-04-30)
+- 重写数据采集脚本（macro_monitor.py v3.0），修复多个数据源问题
+- 行情数据：修复港股/美股指数解析（恒生、纳斯达克、道琼斯）
+- 国内指标：接入东方财富数据中心 API（GDP/CPI/PMI）
+- 新闻资讯：换用新浪财经+网易财经（财联社 API 已失效）
+- 修复报告格式问题（涨跌幅双加号等）
 
 ### v1.2.0 (2026-04-30)
 - 新增 GitHub Actions 自动化工作流
